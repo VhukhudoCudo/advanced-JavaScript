@@ -135,8 +135,8 @@ function updateScoreDisplay() {
 
 // Save scores to local storage
 function saveScores() {
-    localStorage.getItem('userScore', userScore);
-    localStorage.getItem('computerScore', computerScore);
+    localStorage.setItem('userScore', userScore);
+    localStorage.setItem('computerScore', computerScore);
 }
 
 
@@ -242,7 +242,7 @@ function gameEnd() {
 // Initialize display on page load
 updateScoreDisplay();
 
-localStorage.clear();
+//localStorage.clear();
 //userScore.clear();
 //computerScore.clear();
 
@@ -253,6 +253,10 @@ localStorage.clear();
 // }
 // keepScore();
 
-
+let end = document.getElementById("End");
+end.addEventListener("click", () => {
+    localStorage.clear();
+    location.reload();
+})
 
 
